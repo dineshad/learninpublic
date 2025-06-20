@@ -148,13 +148,7 @@ function renderEntries() {
                                 </div>
                                 <div data-filename="pages/StaticExport" data-linenumber="716" data-visual-selector-id="pages/StaticExport716" class="entry-tags">
                                     ${entry.tags.slice(0, 4).map(tag => `
-                                        <span data-filename="pages/StaticExport" data-linenumber="718" data-visual-selector-id="pages/StaticExport718" class="tag">
-                                            <svg data-filename="pages/StaticExport" data-linenumber="719" data-visual-selector-id="pages/StaticExport719" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <path data-filename="pages/StaticExport" data-linenumber="720" data-visual-selector-id="pages/StaticExport720" d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 0 0 1 0 2.82z"></path>
-                                                <line data-filename="pages/StaticExport" data-linenumber="721" data-visual-selector-id="pages/StaticExport721" x1="7" y1="7" x2="7.01" y2="7"></line>
-                                            </svg>
-                                            ${tag}
-                                        </span>
+                                        <span data-filename="pages/StaticExport" data-linenumber="718" data-visual-selector-id="pages/StaticExport718" class="tag">${tag}</span>
                                     `).join('')}
                                 </div>
                             </div>
