@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add Entry</title></head>
+<body>
+  <h1>Add Learning</h1>
+  <form id="addForm">
+    <input placeholder="Title / Tags" id="title"><br>
+    <textarea placeholder="Content (Markdown supported)" id="content"></textarea><br>
+    <input placeholder="Sources (comma separated URLs)" id="sources"><br>
+    <button type="submit">Save</button>
+  </form>
+
+  <script>
+    document.getElementById('addForm').onsubmit = async (e) => {
+      e.preventDefault();
+
+      const title = document.getElementById('title').value.trim();
+      const content = document.getElementById('content').value.trim();
+      const sources = document.getElementById('sources').value.trim();
+
+      const body = {
+        description: title,
+        public: true,
+        files: {
+          "entry.md": {
+            content: `${content}\n\n**Sources:** ${sources}`
+          }
+        }
+      };
+
+      const token = prompt("Enter your GitHub token (only once per session)");
+      const res = await fetch('https://api.github.com/gists', {
+        method: 'POST',
+        headers: {
+          'Authorization': `token ${token}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      });
+
+      const result = await res.json();
+      if (result.id) {
+        alert("Entry saved!");
+        location.href = `entry.html?id=${result.id}`;
+      } else {
+        alert("Failed to save entry.");
+        console.error(result);
+      }
+    };
+  </script>
+</body>
+</html>
