@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>#LearnInPublic Index</title>
+  <title>#LearnInPublic</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>#LearnInPublic</h1>
-  <div id="entries"></div>
-  <button onclick="location.href='add.html'">＋</button>
+  <div id="entries">Loading...</div>
+  <button onclick="location.href='add.html'">＋ Add Entry</button>
 
   <script>
-    const username = 'dineshad';
+    const username = 'dineshad'; // 👈 Replace this with your GitHub username
+
     fetch(`https://api.github.com/users/${username}/gists`)
       .then(res => res.json())
       .then(gists => {
-        const entries = gists.map(gist => {
+        const list = gists.map(gist => {
           const file = Object.values(gist.files)[0];
           const title = gist.description || file.filename;
-          return `<a href="entry.html?id=${gist.id}">${title}</a>`;
-        }).sort();
-        document.getElementById('entries').innerHTML = entries.join('<br>');
+          return { title, id: gist.id };
+        }).sort((a, b) => a.title.localeCompare(b.title));
+
+        document.getElementById('entries').innerHTML =
+          list.map(entry => `<a href="entry.html?id=${entry.id}">${entry.title}</a>`).join('');
+      }).catch(() => {
+        document.getElementById('entries').textContent = "Failed to load entries.";
       });
   </script>
 </body>
