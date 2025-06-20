@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>#LearnInPublic Index</title>
+</head>
+<body>
+  <h1>#LearnInPublic</h1>
+  <div id="entries"></div>
+  <button onclick="location.href='add.html'">＋</button>
+
+  <script>
+    const username = 'YOUR_GITHUB_USERNAME';
+    fetch(`https://api.github.com/users/${username}/gists`)
+      .then(res => res.json())
+      .then(gists => {
+        const entries = gists.map(gist => {
+          const file = Object.values(gist.files)[0];
+          const title = gist.description || file.filename;
+          return `<a href="entry.html?id=${gist.id}">${title}</a>`;
+        }).sort();
+        document.getElementById('entries').innerHTML = entries.join('<br>');
+      });
+  </script>
+</body>
+</html>
