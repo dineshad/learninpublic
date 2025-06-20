@@ -50,6 +50,7 @@ learning-journal/
 - ✅ Responsive design
 - ✅ Search functionality
 - ✅ Alphabetical filtering
+- ✅ Grid/List view toggle
 - ✅ Markdown support
 - ✅ Shareable URLs
 - ✅ Clean, elegant design
