@@ -28,6 +28,7 @@ const entries = [
 
 let filteredEntries = [...entries];
 let selectedLetter = '';
+let currentView = 'grid';
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
@@ -72,14 +73,23 @@ function filterByLetter(letter) {
     searchEntries(); // This will apply both search and letter filter
 }
 
+// Set the view mode
+function setViewMode(mode) {
+    currentView = mode;
+    document.getElementById('grid-view-btn').classList.toggle('active', mode === 'grid');
+    document.getElementById('list-view-btn').classList.toggle('active', mode === 'list');
+    renderEntries(); // Re-render to apply the new view
+}
+
+
 // Render letter filter buttons
 function renderLetterFilter() {
     const letters = [...new Set(entries.map(entry => entry.title[0].toUpperCase()))].sort();
     const filterContainer = document.getElementById('letterFilter');
     
-    let html = '<button data-filename="pages/StaticExport" data-linenumber="537" data-visual-selector-id="pages/StaticExport537" class="letter-btn active" data-letter="" onclick="filterByLetter(\'\')">All</button>';
+    let html = '<button data-filename="pages/StaticExport" data-linenumber="657" data-visual-selector-id="pages/StaticExport657" class="letter-btn active" data-letter="" onclick="filterByLetter(\'\')">All</button>';
     letters.forEach(letter => {
-        html += `<button data-filename="pages/StaticExport" data-linenumber="539" data-visual-selector-id="pages/StaticExport539" class="letter-btn" data-letter="${letter}" onclick="filterByLetter('${letter}')">${letter}</button>`;
+        html += `<button data-filename="pages/StaticExport" data-linenumber="659" data-visual-selector-id="pages/StaticExport659" class="letter-btn" data-letter="${letter}" onclick="filterByLetter('${letter}')">${letter}</button>`;
     });
     
     filterContainer.innerHTML = html;
@@ -91,15 +101,15 @@ function renderEntries() {
     
     if (filteredEntries.length === 0) {
         container.innerHTML = `
-            <div data-filename="pages/StaticExport" data-linenumber="551" data-visual-selector-id="pages/StaticExport551" style="text-align: center; padding: 48px 0;">
-                <div data-filename="pages/StaticExport" data-linenumber="552" data-visual-selector-id="pages/StaticExport552" style="width: 48px; height: 48px; background: #f5f5f4; border-radius: 16px; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center;">
-                    <svg data-filename="pages/StaticExport" data-linenumber="553" data-visual-selector-id="pages/StaticExport553" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #a8a29e;">
-                        <circle data-filename="pages/StaticExport" data-linenumber="554" data-visual-selector-id="pages/StaticExport554" cx="11" cy="11" r="8"></circle>
-                        <path data-filename="pages/StaticExport" data-linenumber="555" data-visual-selector-id="pages/StaticExport555" d="m21 21-4.35-4.35"></path>
+            <div data-filename="pages/StaticExport" data-linenumber="671" data-visual-selector-id="pages/StaticExport671" style="text-align: center; padding: 48px 0;">
+                <div data-filename="pages/StaticExport" data-linenumber="672" data-visual-selector-id="pages/StaticExport672" style="width: 48px; height: 48px; background: #f5f5f4; border-radius: 16px; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center;">
+                    <svg data-filename="pages/StaticExport" data-linenumber="673" data-visual-selector-id="pages/StaticExport673" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #a8a29e;">
+                        <circle data-filename="pages/StaticExport" data-linenumber="674" data-visual-selector-id="pages/StaticExport674" cx="11" cy="11" r="8"></circle>
+                        <path data-filename="pages/StaticExport" data-linenumber="675" data-visual-selector-id="pages/StaticExport675" d="m21 21-4.35-4.35"></path>
                     </svg>
                 </div>
                 <h3 style="font-size: 18px; font-weight: 500; color: #1c1917; margin-bottom: 8px;">No entries found</h3>
-                <p data-filename="pages/StaticExport" data-linenumber="559" data-visual-selector-id="pages/StaticExport559" style="color: #78716c;">Try adjusting your search terms or filters</p>
+                <p data-filename="pages/StaticExport" data-linenumber="679" data-visual-selector-id="pages/StaticExport679" style="color: #78716c;">Try adjusting your search terms or filters</p>
             </div>
         `;
         return;
@@ -120,26 +130,28 @@ function renderEntries() {
         .sort(([a], [b]) => a.localeCompare(b))
         .forEach(([letter, letterEntries]) => {
             html += `
-                <div data-filename="pages/StaticExport" data-linenumber="580" data-visual-selector-id="pages/StaticExport580" class="letter-section">
-                    <div data-filename="pages/StaticExport" data-linenumber="581" data-visual-selector-id="pages/StaticExport581" class="letter-header">
-                        <div data-filename="pages/StaticExport" data-linenumber="582" data-visual-selector-id="pages/StaticExport582" class="letter-badge">${letter}</div>
-                        <div data-filename="pages/StaticExport" data-linenumber="583" data-visual-selector-id="pages/StaticExport583" class="letter-line"></div>
-                        <div data-filename="pages/StaticExport" data-linenumber="584" data-visual-selector-id="pages/StaticExport584" class="entry-count">${letterEntries.length} entr${letterEntries.length === 1 ? 'y' : 'ies'}</div>
+                <div data-filename="pages/StaticExport" data-linenumber="700" data-visual-selector-id="pages/StaticExport700" class="letter-section">
+                    <div data-filename="pages/StaticExport" data-linenumber="701" data-visual-selector-id="pages/StaticExport701" class="letter-header">
+                        <div data-filename="pages/StaticExport" data-linenumber="702" data-visual-selector-id="pages/StaticExport702" class="letter-badge">${letter}</div>
+                        <div data-filename="pages/StaticExport" data-linenumber="703" data-visual-selector-id="pages/StaticExport703" class="letter-line"></div>
+                        <div data-filename="pages/StaticExport" data-linenumber="704" data-visual-selector-id="pages/StaticExport704" class="entry-count">${letterEntries.length} entr${letterEntries.length === 1 ? 'y' : 'ies'}</div>
                     </div>
-                    <div data-filename="pages/StaticExport" data-linenumber="586" data-visual-selector-id="pages/StaticExport586" class="entries-grid">
+                    <div data-filename="pages/StaticExport" data-linenumber="706" data-visual-selector-id="pages/StaticExport706" class="entries-grid ${currentView === 'grid' ? 'view-grid' : 'view-list'}">
                         ${letterEntries.map(entry => `
-                            <div data-filename="pages/StaticExport" data-linenumber="588" data-visual-selector-id="pages/StaticExport588" class="entry-card" onclick="openEntry('${entry.filename}')">
-                                <h3 class="entry-title">${entry.title}</h3>
-                                <p data-filename="pages/StaticExport" data-linenumber="590" data-visual-selector-id="pages/StaticExport590" class="entry-preview">${entry.preview}</p>
-                                <div data-filename="pages/StaticExport" data-linenumber="591" data-visual-selector-id="pages/StaticExport591" class="entry-meta">
-                                    <span data-filename="pages/StaticExport" data-linenumber="592" data-visual-selector-id="pages/StaticExport592">📅 ${formatDate(entry.date)}</span>
+                            <div data-filename="pages/StaticExport" data-linenumber="708" data-visual-selector-id="pages/StaticExport708" class="entry-card" onclick="openEntry('${entry.filename}')">
+                                <div data-filename="pages/StaticExport" data-linenumber="709" data-visual-selector-id="pages/StaticExport709" class="entry-content-wrapper">
+                                    <h3 class="entry-title">${entry.title}</h3>
+                                    <p data-filename="pages/StaticExport" data-linenumber="711" data-visual-selector-id="pages/StaticExport711" class="entry-preview">${entry.preview}</p>
+                                    <div data-filename="pages/StaticExport" data-linenumber="712" data-visual-selector-id="pages/StaticExport712" class="entry-meta">
+                                        <span data-filename="pages/StaticExport" data-linenumber="713" data-visual-selector-id="pages/StaticExport713">📅 ${formatDate(entry.date)}</span>
+                                    </div>
                                 </div>
-                                <div data-filename="pages/StaticExport" data-linenumber="594" data-visual-selector-id="pages/StaticExport594" class="entry-tags">
-                                    ${entry.tags.map(tag => `
-                                        <span data-filename="pages/StaticExport" data-linenumber="596" data-visual-selector-id="pages/StaticExport596" class="tag">
-                                            <svg data-filename="pages/StaticExport" data-linenumber="597" data-visual-selector-id="pages/StaticExport597" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <path data-filename="pages/StaticExport" data-linenumber="598" data-visual-selector-id="pages/StaticExport598" d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
-                                                <line data-filename="pages/StaticExport" data-linenumber="599" data-visual-selector-id="pages/StaticExport599" x1="7" y1="7" x2="7.01" y2="7"></line>
+                                <div data-filename="pages/StaticExport" data-linenumber="716" data-visual-selector-id="pages/StaticExport716" class="entry-tags">
+                                    ${entry.tags.slice(0, 4).map(tag => `
+                                        <span data-filename="pages/StaticExport" data-linenumber="718" data-visual-selector-id="pages/StaticExport718" class="tag">
+                                            <svg data-filename="pages/StaticExport" data-linenumber="719" data-visual-selector-id="pages/StaticExport719" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path data-filename="pages/StaticExport" data-linenumber="720" data-visual-selector-id="pages/StaticExport720" d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 0 0 1 0 2.82z"></path>
+                                                <line data-filename="pages/StaticExport" data-linenumber="721" data-visual-selector-id="pages/StaticExport721" x1="7" y1="7" x2="7.01" y2="7"></line>
                                             </svg>
                                             ${tag}
                                         </span>
