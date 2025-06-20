@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html data-filename="pages/StaticExport" data-linenumber="348" data-visual-selector-id="pages/StaticExport348" lang="en">
+<head data-filename="pages/StaticExport" data-linenumber="349" data-visual-selector-id="pages/StaticExport349">
+    <meta data-filename="pages/StaticExport" data-linenumber="350" data-visual-selector-id="pages/StaticExport350" charset="UTF-8">
+    <meta data-filename="pages/StaticExport" data-linenumber="351" data-visual-selector-id="pages/StaticExport351" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-filename="pages/StaticExport" data-linenumber="352" data-visual-selector-id="pages/StaticExport352">Entry - Learning Journal</title>
+    <link data-filename="pages/StaticExport" data-linenumber="353" data-visual-selector-id="pages/StaticExport353" rel="stylesheet" href="styles.css">
+    <link data-filename="pages/StaticExport" data-linenumber="354" data-visual-selector-id="pages/StaticExport354" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style data-filename="pages/StaticExport" data-linenumber="355" data-visual-selector-id="pages/StaticExport355">
+        .entry-content { max-width: 800px; margin: 0 auto; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(4px); border: 1px solid rgba(231, 229, 228, 0.5); border-radius: 16px; padding: 48px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08); }
+        .entry-header { margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid rgba(231, 229, 228, 0.5); }
+        .entry-header h1 { font-size: 36px; font-weight: 700; color: #1c1917; margin-bottom: 16px; line-height: 1.2; }
+        .back-btn { display: inline-flex; align-items: center; gap: 8px; color: #78716c; text-decoration: none; margin-bottom: 32px; transition: color 0.2s; }
+        .back-btn:hover { color: #4a5c4a; }
+        .share-btn { float: right; display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(231, 229, 228, 0.5); padding: 6px 12px; border-radius: 8px; font-size: 14px; cursor: pointer; transition: all 0.2s; }
+        .share-btn:hover { border-color: #4a5c4a; background: rgba(74, 92, 74, 0.05); }
+        .markdown-content { line-height: 1.8; color: #292524; }
+        .markdown-content h1, .markdown-content h2, .markdown-content h3 { color: #1c1917; margin-top: 32px; margin-bottom: 16px; }
+        .markdown-content h1 { font-size: 28px; }
+        .markdown-content h2 { font-size: 24px; }
+        .markdown-content h3 { font-size: 20px; }
+        .markdown-content p { margin-bottom: 16px; }
+        .markdown-content ul, .markdown-content ol { margin-bottom: 16px; padding-left: 24px; }
+        .markdown-content li { margin-bottom: 4px; }
+        .markdown-content blockquote { border-left: 4px solid #4a5c4a; padding-left: 16px; margin: 24px 0; background: rgba(74, 92, 74, 0.05); padding: 16px; border-radius: 0 8px 8px 0; font-style: italic; color: #57534e; }
+        .markdown-content code { background: #f5f5f4; padding: 2px 6px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 14px; }
+        .markdown-content pre { background: #f5f5f4; padding: 16px; border-radius: 8px; overflow-x: auto; margin: 16px 0; }
+        .markdown-content pre code { background: none; padding: 0; }
+        .sources-section { margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(231, 229, 228, 0.5); }
+        .sources-section h3 { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 600; margin-bottom: 16px; }
+        .source-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: rgba(245, 245, 244, 0.5); border-radius: 8px; margin-bottom: 8px; }
+        .source-number { font-family: 'Courier New', monospace; font-size: 12px; color: #78716c; min-width: 24px; }
+        .source-link { color: #4a5c4a; text-decoration: underline; word-break: break-all; }
+    </style>
+</head>
+<body data-filename="pages/StaticExport" data-linenumber="382" data-visual-selector-id="pages/StaticExport382">
+    <div data-filename="pages/StaticExport" data-linenumber="383" data-visual-selector-id="pages/StaticExport383" class="container">
+        <header data-filename="pages/StaticExport" data-linenumber="384" data-visual-selector-id="pages/StaticExport384" class="header"><div data-filename='pages/StaticExport' data-linenumber='384' data-visual-selector-id='pages/StaticExport384' class="header-content"><a data-filename='pages/StaticExport' data-linenumber='384' data-visual-selector-id='pages/StaticExport384' href="index.html" class="logo"><div data-filename='pages/StaticExport' data-linenumber='384' data-visual-selector-id='pages/StaticExport384' class="logo-icon"><svg data-filename='pages/StaticExport' data-linenumber='384' data-visual-selector-id='pages/StaticExport384' width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path data-filename='pages/StaticExport' data-linenumber='384' data-visual-selector-id='pages/StaticExport384' d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path data-filename='pages/StaticExport' data-linenumber='384' data-visual-selector-id='pages/StaticExport384' d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg></div><div data-filename='pages/StaticExport' data-linenumber='384' data-visual-selector-id='pages/StaticExport384' class="logo-text"><h1>Learning Journal</h1><p data-filename='pages/StaticExport' data-linenumber='384' data-visual-selector-id='pages/StaticExport384'>Knowledge, captured & shared</p></div></a></div></header>
+        <main data-filename="pages/StaticExport" data-linenumber="385" data-visual-selector-id="pages/StaticExport385" class="main">
+            <a data-filename="pages/StaticExport" data-linenumber="386" data-visual-selector-id="pages/StaticExport386" href="index.html" class="back-btn"><svg data-filename='pages/StaticExport' data-linenumber='386' data-visual-selector-id='pages/StaticExport386' width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line data-filename='pages/StaticExport' data-linenumber='386' data-visual-selector-id='pages/StaticExport386' x1="19" y1="12" x2="5" y2="12"></line><polyline data-filename='pages/StaticExport' data-linenumber='386' data-visual-selector-id='pages/StaticExport386' points="12,19 5,12 12,5"></polyline></svg>Back to Index</a>
+            <button data-filename="pages/StaticExport" data-linenumber="387" data-visual-selector-id="pages/StaticExport387" class="share-btn" onclick="shareEntry()"><svg data-filename='pages/StaticExport' data-linenumber='387' data-visual-selector-id='pages/StaticExport387' width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle data-filename='pages/StaticExport' data-linenumber='387' data-visual-selector-id='pages/StaticExport387' cx="18" cy="5" r="3"></circle><circle data-filename='pages/StaticExport' data-linenumber='387' data-visual-selector-id='pages/StaticExport387' cx="6" cy="12" r="3"></circle><circle data-filename='pages/StaticExport' data-linenumber='387' data-visual-selector-id='pages/StaticExport387' cx="18" cy="19" r="3"></circle><line data-filename='pages/StaticExport' data-linenumber='387' data-visual-selector-id='pages/StaticExport387' x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line data-filename='pages/StaticExport' data-linenumber='387' data-visual-selector-id='pages/StaticExport387' x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg><span data-filename='pages/StaticExport' data-linenumber='387' data-visual-selector-id='pages/StaticExport387' id="shareText">Share</span></button>
+            <article data-filename="pages/StaticExport" data-linenumber="388" data-visual-selector-id="pages/StaticExport388" class="entry-content">
+                <div data-filename="pages/StaticExport" data-linenumber="389" data-visual-selector-id="pages/StaticExport389" class="entry-header"><h1 id="entryTitle">Loading...</h1><div data-filename="pages/StaticExport" data-linenumber="389" data-visual-selector-id="pages/StaticExport389" class="entry-meta"><span data-filename='pages/StaticExport' data-linenumber='389' data-visual-selector-id='pages/StaticExport389' id="entryDate"></span></div><div data-filename="pages/StaticExport" data-linenumber="389" data-visual-selector-id="pages/StaticExport389" class="entry-tags" id="entryTags"></div></div>
+                <div data-filename="pages/StaticExport" data-linenumber="390" data-visual-selector-id="pages/StaticExport390" class="markdown-content" id="entryContent">Loading content...</div>
+                <div data-filename="pages/StaticExport" data-linenumber="391" data-visual-selector-id="pages/StaticExport391" class="sources-section" id="sourcesSection" style="display: none;"><h3><svg data-filename='pages/StaticExport' data-linenumber='391' data-visual-selector-id='pages/StaticExport391' width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path data-filename='pages/StaticExport' data-linenumber='391' data-visual-selector-id='pages/StaticExport391' d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline data-filename='pages/StaticExport' data-linenumber='391' data-visual-selector-id='pages/StaticExport391' points="15,3 21,3 21,9"></polyline><line data-filename='pages/StaticExport' data-linenumber='391' data-visual-selector-id='pages/StaticExport391' x1="10" y1="14" x2="21" y2="3"></line></svg>Sources & References</h3><div data-filename="pages/StaticExport" data-linenumber="391" data-visual-selector-id="pages/StaticExport391" id="sourcesList"></div></div>
+            </article>
+        </main>
+        <footer data-filename="pages/StaticExport" data-linenumber="394" data-visual-selector-id="pages/StaticExport394" class="footer"><p data-filename='pages/StaticExport' data-linenumber='394' data-visual-selector-id='pages/StaticExport394'>Built with care for continuous learning</p></footer>
+    </div>
+    <script data-filename="pages/StaticExport" data-linenumber="396" data-visual-selector-id="pages/StaticExport396" src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script data-filename="pages/StaticExport" data-linenumber="397" data-visual-selector-id="pages/StaticExport397">
+        const urlParams = new URLSearchParams(window.location.search);
+        const filename = urlParams.get('file');
+        if (!filename) { window.location.href = 'index.html'; }
+        
+        loadMarkdownFile(filename);
+        
+        async function loadMarkdownFile(filename) {
+            try {
+                const response = await fetch('entries/' + filename);
+                if (!response.ok) throw new Error('File not found');
+                const content = await response.text();
+                const parsed = parseMarkdown(content);
+                document.getElementById('entryTitle').textContent = parsed.title;
+                document.getElementById('entryContent').innerHTML = marked.parse(parsed.content);
+                if (parsed.tags && parsed.tags.length > 0) { document.getElementById('entryTags').innerHTML = parsed.tags.map(tag => '<span data-filename="pages/StaticExport" data-linenumber="412" data-visual-selector-id="pages/StaticExport412" class="tag">' + tag + '</span>').join(''); }
+                if (parsed.sources && parsed.sources.length > 0) {
+                    document.getElementById('sourcesSection').style.display = 'block';
+                    document.getElementById('sourcesList').innerHTML = parsed.sources.map((source, index) => '<div data-filename="pages/StaticExport" data-linenumber="415" data-visual-selector-id="pages/StaticExport415" class="source-item"><span data-filename='pages/StaticExport' data-linenumber='415' data-visual-selector-id='pages/StaticExport415' class="source-number">[' + (index + 1) + ']</span><span data-filename='pages/StaticExport' data-linenumber='415' data-visual-selector-id='pages/StaticExport415' class="source-link">' + source + '</span></div>').join('');
+                }
+            } catch (error) { document.getElementById('entryContent').innerHTML = '<p data-filename="pages/StaticExport" data-linenumber="417" data-visual-selector-id="pages/StaticExport417">Error loading entry. <a data-filename="pages/StaticExport" data-linenumber="417" data-visual-selector-id="pages/StaticExport417" href="index.html">Return to index</a></p>'; }
+        }
+        
+        function parseMarkdown(content) {
+            const lines = content.split('\n');
+            let title = '', tags = [], sources = [], contentLines = [];
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i];
+                if (line.startsWith('# ') && !title) { title = line.substring(2); continue; }
+                contentLines.push(line);
+            }
+            return { title: title || 'Untitled', content: contentLines.join('\n'), tags, sources };
+        }
+        
+        function shareEntry() {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    const shareText = document.getElementById('shareText');
+                    shareText.textContent = 'Copied!';
+                    setTimeout(() => { shareText.textContent = 'Share'; }, 2000);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
