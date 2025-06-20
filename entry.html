@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Entry</title></head>
+<body>
+  <div id="content"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const id = params.get('id');
+
+    fetch(`https://api.github.com/gists/${id}`)
+      .then(res => res.json())
+      .then(gist => {
+        const file = Object.values(gist.files)[0];
+        document.getElementById('content').innerHTML = marked.parse(file.content);
+      });
+  </script>
+</body>
+</html>
