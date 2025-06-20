@@ -7,22 +7,6 @@ const entries = [
         tags: ['react', 'javascript', 'frontend', 'hooks'],
         date: '2024-01-15',
         filename: 'react-hooks-fundamentals.md'
-    },
-    {
-        id: 'css-grid-layout-system',
-        title: 'CSS Grid Layout System',
-        preview: 'CSS Grid is a two-dimensional layout system that revolutionizes web layouts.',
-        tags: ['css', 'layout', 'grid', 'frontend'],
-        date: '2024-01-12',
-        filename: 'css-grid-layout-system.md'
-    },
-    {
-        id: 'nodejs-async-programming',
-        title: 'Node.js Async Programming',
-        preview: 'Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient.',
-        tags: ['nodejs', 'javascript', 'async', 'backend'],
-        date: '2024-01-10',
-        filename: 'nodejs-async-programming.md'
     }
 ];
 
